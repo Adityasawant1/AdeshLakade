@@ -1,0 +1,253 @@
+/* Projects Section */
+.projects {
+  min-height: 100vh;
+  padding: 80px 8% 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #111;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px); /* responsive title size */
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Project Card */
+.project-box {
+  flex: 1 1 320px;   /* min width for mobile */
+  max-width: 420px;  /* max width for desktop */
+  min-height: 460px; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: #2a2f3a;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Image inside card */
+.project-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Title + Description */
+.project-box h4,
+.project-box p {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.project-box h4 {
+  font-size: clamp(18px, 2.5vw, 22px);
+  margin: 20px 0 12px;
+  color: #0ef;
+  font-weight: 600;
+}
+
+.project-box p {
+  font-size: clamp(13px, 2vw, 15px);
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.download-btn {
+  display: block; /* makes it easier to center */
+  margin: 15px auto; /* top/bottom + center horizontally */
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #4e9af1, #2563eb);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center; /* center the text */
+  transition: 0.3s ease;
+  font-size: 15px;
+  width: 80%; /* optional: controls button width */
+  max-width: 250px; /* limits size on large screens */
+}
+
+.download-btn i {
+  margin-right: 8px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Project Image Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Image Styling */
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+/* Overlay (hidden by default) */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+}
+
+/* Hover Effect */
+.image-container:hover .project-image {
+  transform: scale(1.05);
+  filter: blur(3px) brightness(0.7);
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Download Button (for context) */
+.download-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #4e9af1, #2563eb);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.3s ease;
+  font-size: 15px;
+  width: 80%;
+  max-width: 250px;
+}
+
+.download-btn i {
+  margin-right: 8px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+.popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup Box */
+    .popup-content {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 90%;
+      width: 600px;
+      max-height: 80vh;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scrollable image area */
+    .image-scroll-box {
+      overflow-y: auto;
+      max-height: 60vh;
+      padding-right: 10px;
+    }
+
+    .image-scroll-box img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    /* Close button */
+    .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 25px;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .projects {
+    padding: 60px 5% 30px;
+  }
+  .project-box {
+    flex: 1 1 45%; /* two per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-box {
+    width: 100%; /* full width on mobile */
+    max-width: 95%;
+  }
+}
+
+
+
+
+ 
