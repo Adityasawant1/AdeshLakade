@@ -1,7 +1,7 @@
 .about {
   min-height: 100vh;
   padding: 60px 10%;
-  background: #111;
+  background: #0a0a0a;
   color: #fff;
   display: flex;
   align-items: center;
@@ -9,13 +9,15 @@
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 850px;
   text-align: center;
 }
 
 .about .heading {
   font-size: 3rem;
   margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .about .heading span {
@@ -26,7 +28,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 25px;
-  color: #ccc;
+  color: #bbb;
 }
 
 .about-content p {
@@ -36,9 +38,6 @@
   margin-bottom: 20px;
 }
 
-
-
-/* Responsive */
 @media (max-width: 768px) {
   .about {
     padding: 50px 5%;
@@ -54,9 +53,5 @@
 
   .about-content p {
     font-size: 0.95rem;
-  }
-
-  .about-buttons {
-    flex-direction: column;
   }
 }
